@@ -1,0 +1,26 @@
+<div class="container-fluid py-5 px-5">
+    <h4>Movies Listing @GV Cinema</h4>
+    <div class="mb-3 col-md-3">
+        <button class="btn btn-sm btn-primary" routerLink="/">Back</button>
+        <h5>{{movie.name}}</h5>
+        <p>({{movie.mpaaRating.type+' : '+movie.mpaaRating.label}})</p>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src={{movie.imgPath}} class="img-thumbnail img-height" alt="images">
+            </div>
+            <div class="col-md-8">
+                <h6>Detail</h6>
+                <p>Genre: {{movie.genre.join()}}</p>
+                <p>Language: {{movie.language}}</p>
+                <p>Duration: {{movie.duration}} mintues</p>
+                <p>User Rating: {{movie.userRating}}</p>
+
+                <h6>Synopsis</h6>
+                <p>{{movie.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

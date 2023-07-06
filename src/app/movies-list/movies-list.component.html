@@ -1,0 +1,24 @@
+<div class="container-fluid py-5 px-5">
+    <h4>Movies Listing @GV Cinema</h4>
+    <div class="mb-3 col-md-3">
+        <input type="text" name="search" [(ngModel)]="search" (ngModelChange)="searchTextChanges($event)" class="form-control" placeholder="Search movies...">
+    </div>
+    <hr>
+    <h5>Popular Movies This Month</h5>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-md-3 col-sm-12" *ngFor="let movie of movies">
+                <a [routerLink]="['/details', movie.id]" class="link-style">
+                    <img src={{movie.imgPath}} class="img-thumbnail img-height" alt="images">
+                    <p>
+                        <strong>{{movie.name}}</strong>
+                        <br>
+                        <small>{{movie.duration}} min</small>
+                        <br>
+                        <small>User Rating: {{movie.userRating}}</small>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
